@@ -1,0 +1,22 @@
+/* Home.css */
+.home-container {
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.home-title {
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.home-content {
+  color: #666;
+  font-size: 18px;
+  line-height: 1.6;
+}

@@ -1,0 +1,75 @@
+/* RecipeList.css */
+
+/* Search bar container */
+.search-bar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10vh; /* Adjust this value to move the search bar up or down */
+}
+
+.search-bar {
+  width: 50%;
+  padding: 10px;
+  margin-bottom: 20px; /* Space between search bar and recipe grid */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Recipe grid styles */
+.recipe-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px;
+}
+
+.recipe-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+  animation: fadeIn 0.5s ease-in-out;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+  height: 250px; /* Adjust height as needed */
+  width: 200px; /* Fixed width for each card */
+  position: relative;
+  overflow: hidden;
+}
+
+.recipe-card .recipe-name {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 4px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 20px);
+  text-align: center;
+}
+
+.recipe-card:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Animation styles */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
