@@ -56,9 +56,13 @@ const RecipeList = () => {
 
   useEffect(() => {
     const lowerCaseQuery = searchQuery.toLowerCase();
+    const searchIngredients = lowerCaseQuery.split(',').map(ingredient => ingredient.trim());
+
     const filtered = recipeList.filter(recipe =>
-      recipe.name.toLowerCase().includes(lowerCaseQuery) ||
-      recipe.ingredients.toLowerCase().includes(lowerCaseQuery)
+      searchIngredients.every(ingredient =>
+        recipe.ingredients.toLowerCase().includes(ingredient)
+      ) ||
+      recipe.name.toLowerCase().includes(lowerCaseQuery)
     );
 
     const sortedRecipes = filtered.sort((a, b) => {
@@ -79,22 +83,21 @@ const RecipeList = () => {
   return (
     <div className="recipe-list-container">
       <div className="search-bar-container">
-        {filteredRecipes.length === 0 ? (
-            <p>Add recipes to search.</p>
-          ) : (
-            <input
-              className="search-bar"
-              type="text"
-              placeholder="Search recipes by ingredients or name"
-              value={searchQuery}
-              onChange={handleSearchChange}
-            />
-        )}
+        <input
+          className="search-bar"
+          type="text"
+          placeholder="Search recipes by ingredients or name"
+          value={searchQuery}
+          onChange={handleSearchChange}
+        />
       </div>
 
       <div className='recipe-grid'>
         {filteredRecipes.length === 0 ? (
-          <p>No recipes found.</p>
+          <div>
+            <p>No recipes found. Please adjust your search.</p>
+            <button onClick={() => setSearchQuery('')}>Reset Search</button>
+          </div>
         ) : (
           filteredRecipes.map((recipe) => (
             <div key={recipe.id} className="recipe-card-container">
