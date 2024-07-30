@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 
 const RecipeDetails = () => {
   const { id } = useParams();
-  const [recipe, setRecipe] = useState(id);
+  const [recipe, setRecipe] = useState(null);  // Initialize as null
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -32,7 +32,7 @@ const RecipeDetails = () => {
   }
 
   if (!recipe) {
-    return <p>No recipe found for ID {recipe}</p>;
+    return <p>No recipe found for ID {id}</p>;
   }
 
   return (
@@ -44,6 +44,8 @@ const RecipeDetails = () => {
           <li key={index}>{ingredient.trim()}</li>
         ))}
       </ul>
+      <h3>How to make it</h3>
+      <p>{recipe.description}</p> {/* Added description field */}
     </div>
   );
 };

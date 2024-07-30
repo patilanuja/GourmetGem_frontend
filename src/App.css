@@ -11,22 +11,40 @@ body {
 /* Navbar styles */
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 10px 20px;
   background-color: #f8f9fa;
   border-bottom: 1px solid #ccc;
+  width: 100%; /* Ensure it takes full width */
+  box-sizing: border-box;
 }
 
 .menu {
   list-style-type: none;
-  display: flex;
+  display:flex;
   gap: 20px;
+
 }
 
 .menu li {
   font-size: 18px;
+  position: relative;
 }
+
+.menu a {
+  text-decoration: none;
+  /* color: #333; Dark text color */
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.menu a:hover {
+  background-color: #ff0800; /* Background color on hover */
+  color: #fff; /* Text color on hover */
+}
+
 
 /* Home container styles */
 .home-container {

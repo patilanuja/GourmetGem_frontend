@@ -1,39 +1,73 @@
-/* RecipeDetails.css */
+/* Background styling for RecipeDetails page */
 .recipe-details {
-  margin: 20px;
+  background: url('..\images\BG-bread-space-left.jpg') no-repeat center center/cover;
+  background-color: #333; /* Fallback color */
+  color: white;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #f9f9f9;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3); /* Optional: Adds subtle depth */
+  border-radius: 0;
+  position: relative;
+  min-height: calc(100vh - 60px); /* Adjust this value according to the height of your navigation bar */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
+/* Overlay for better text readability */
+.recipe-details::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  z-index: -1; /* Ensure it stays behind the content */
+}
+
+/* Title styling */
 .recipe-details h2 {
-  color: #333;
-  font-size: 24px;
-  margin-bottom: 10px;
+  color: #ffd700; /* Gold color for emphasis */
+  font-size: 36px; /* Larger font size for prominence */
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Shadow for text readability */
 }
 
+/* Description styling */
 .recipe-details p {
-  color: #666;
-  font-size: 16px;
-  margin-bottom: 15px;
+  color: #e0e0e0; /* Light gray color for better contrast */
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* Shadow for text readability */
+  max-width: 800px; /* Limiting max width for better readability */
+  margin-left: auto;
+  margin-right: auto;
 }
 
+/* Subheading styling */
 .recipe-details h3 {
-  color: #555;
-  font-size: 20px;
-  margin-top: 16px;
-  margin-bottom: 10px;
+  color: #00ff15; /* Gold color for emphasis */
+  font-size: 28px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Shadow for text readability */
 }
 
+/* List styling */
 .recipe-details ul {
   list-style-type: disc;
-  margin-left: 20px;
+  margin-left: 40px; /* Increase margin for better alignment */
   margin-bottom: 20px;
+  text-align: left; /* Align list items to the left */
 }
 
+/* List item styling */
 .recipe-details li {
-  color: #777;
-  font-size: 16px;
-  line-height: 1.5;
+  color: #e0e0e0; /* Light gray color for better contrast */
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 10px; /* Spacing between list items */
 }
